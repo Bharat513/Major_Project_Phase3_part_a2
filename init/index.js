@@ -19,6 +19,7 @@ async function main() {
 
 const initDB = async () => {
     await Listing.deleteMany({});
+    initData.data = initData.data.map((obj) => ({...obj, owner: "659c0106339945844a40f6e7"}));
     await Listing.insertMany(initData.data);
     //initData apne app me ek obj h or apne ko data obtain karna h usse
 
